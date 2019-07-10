@@ -1,16 +1,39 @@
-import cv2
-import pytesseract
-import numpy as np
+import numpy
+#import tensorflow as tf
+from tensorflow import keras
+from PIL import Image
+from numpy import asarray
+# load the image
+image = Image.open('APPLE.jpg')
+# convert image to numpy array
+data = asarray(image)
+# summarize shape
+print(data.shape[0])
+print(data.shape[1])
+half_width = int(data.shape[0]/2)
+half_height = int(data.shape[1]/2)
+print(data[half_width][half_height])
+# create Pillow image
+image2 = Image.fromarray(data)
+# summarize image details
+print(image2.format)
+print(image2.mode)
+print(image2.size)
+
+
+
+
+
+#def softmax(Logit_scores)
+ #   tf.Softmax(Logit_scores)
+
+
+
+
 
 def main():
-    input_img = 'APPLE.png'
-    img = cv2.imread(input_img, cv2.IMREAD_ANYCOLOR)
-#^^ The first parameter is the variable for the image path and the second is the way the image should  be read.. in this case it is in any color
-    cv2.imshow('image', img)
-    cv2.waitKey()
-    cv2.destroyAllWindows()
 
 
-if __name__ == "__main__":
-
+ if __name__ == '__main__':
     main()
+
