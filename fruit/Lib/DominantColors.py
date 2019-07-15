@@ -13,9 +13,11 @@ class DominantColors:
     def __init__(self, image, clusters):
         self.CLUSTERS = clusters
         self.IMAGE = image
+
     def dominantColors(self):
         # static method
         # read image
+        print(self.IMAGE)
         img = cv2.imread(self.IMAGE)
         # convert to rgb from bgr
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -28,21 +30,9 @@ class DominantColors:
         kmeans.fit(img)
         # the cluster centers are our dominant colors.
         self.COLORS = kmeans.cluster_centers_
-
+ #hexadecimal
         # save labels
         self.LABELS = kmeans.labels_
 
         # returning after converting to integer from float
         return self.COLORS.astype(int)
-
-
-img = 'APPLE.jpg'
-
-clusters = 2
-
-dc = DominantColors(img, clusters)
-
-colors = dc.dominantColors()
-
-print(colors)
-

@@ -6,36 +6,23 @@ import cv2
 
 
 
-#read image
-
-img = cv2.imread('colors.jpg')
-
-
-
+ #read images
+    img = cv2.imread('APPLE.jpg')
 #convert from BGR to RGB
 
-img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
-
-
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 #get rgb values from image to 1D array
+    r, g, b = cv2.split(img)
+    r = r.flatten()
+    g = g.flatten()
+    b = b.flatten()
+    #plotting
 
-r, g, b = cv2.split(img)
+    fig = plt.figure()
 
-r = r.flatten()
+    ax = Axes3D(fig)
 
-g = g.flatten()
-
-b = b.flatten()
-
-
-
-#plotting
-
-fig = plt.figure()
-
-ax = Axes3D(fig)
-
-ax.scatter(r, g, b)
-print(ax)
-plt.show()
+    ax.scatter(r, g, b)
+    print(ax)
+    #plt.savefig()
+    plt.show()
