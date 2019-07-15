@@ -36,13 +36,3 @@ class DominantColors:
         return self.COLORS.astype(int)
 
 
-img = 'APPLE.jpg'
-
-clusters = 2
-
-dc = DominantColors(img, clusters)
-
-colors = dc.dominantColors()
-
-print(colors)
-
