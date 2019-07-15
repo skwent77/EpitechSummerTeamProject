@@ -1,4 +1,3 @@
-from DomininantColors import DominantColors
 from PIL import Image
 import numpy
 from numpy import asarray
@@ -19,20 +18,16 @@ class chart:
     g = g.flatten()
     b = b.flatten()
     #plotting
-
     fig = plt.figure()
-
     ax = Axes3D(fig)
-
     ax.scatter(r, g, b)
 
-    #plt.show()
-
-    image=Image.open('APPLE.jpg')
+    plt.show()
+    '''image=Image.open('APPLE.jpg')
     data=asarray(image)
     print(data)
-
     image2=Image.fromarray(data)
     print(image2.format)
     print(image2.mode)
     print(image2.size)
+'''
