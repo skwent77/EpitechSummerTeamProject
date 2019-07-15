@@ -1,23 +1,20 @@
 from DominantColors import DominantColors
-#from tester import tester
-#from 파일이름 import 클래스이름
-class Main:
-    ImageOfFruit = 'APPLE.jpg'
+from tester import three_d_model
 
-    def main():
-        #for :
+image = 'colors.jpg'
+def main():
 
+   three_d_model.chart(image)
+   clusters = 2
 
-        clusters = 2
+   dc = DominantColors(image, clusters)
 
-        dc = DominantColors(Main.ImageOfFruit, clusters)
-        img=ImageOfFruit
-        colors = dc.dominantColors()
+   colors = dc.dominantColors()
 
-        print(colors)
+   print(colors)
 
-    if __name__ == '__main__':
-        main()
+if __name__ == '__main__':
+    main()
 
 
 
